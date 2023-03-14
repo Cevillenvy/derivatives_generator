@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="professor.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.css" integrity="sha384-ko6T2DjISesD0S+wOIeHKMyKsHvWpdQ1s/aiaQMbL+TIXx3jg6uyf9hlv3WWfwYv" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.js" integrity="sha384-tsPOhveNsi36uhglzMBNOAA2xd7LlEqQuQHFKi4DwP+6UKrrLGub1MD77Zx18F8e" crossorigin="anonymous"></script>
+</head>
+<body >
+    <div class="d-flex justify-content-center align-items-center flex-row">
+        <div class="form-outline difficulty">
+            <label for="taskDifficulty" class="form-label text-center">Сложность задачи</label>
+            <input type="number" id="taskDifficulty" class="form-control">
+        </div>
+    
+        <div class="btn-group-vertical generateButtons" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary" onclick="generateAndDisplayF1()">Сгенерировать унарную функцию</button>
+            <button type="button" class="btn btn-primary" onclick="generateAndDisplayF2()">Сгенерировать бинарную функцию</button>
+        </div>
+    </div>
+
+    <div class="form-outline d-flex w-50 m-auto justify-content-center align-items-center flex-column">
+        <label for="taskOutput">Предпросмотр функции</label>
+        <input type="text" id="taskOutput" class="hidden" disabled>
+        <p type="text" id="taskOutputP" class="form-control text-center" disabled></p>
+    </div>
+    <p class="text-center mt-2">Подходит?</p>
+    <div class="btn-group-vertical d-flex w-25 m-auto justify-content-center align-items-center" role="group" aria-label="Basic mixed styles example">
+        <button type="button" class="btn btn-success" onclick="addIntoTaskList()">Да, добавить в список</button>
+        <button type="button" class="btn btn-danger" onclick="refreshF()">Нет, обновить</button>
+        <button type="button" class="btn btn-warning" onclick="clearTaskList()">Очистить список добавленных задач</button>
+    </div>
+
+    <p class="text-center mt-2" id="taskText"></p>
+    <ul id="taskList" class="list-group d-flex w-50 mx-auto"></ul>
+    <div class="btn-group d-flex justify-content-center align-items-center w-25 m-auto">
+        <button type="button" class="btn btn-success" onclick="encryptTask()">Зашифровать список</button>
+    </div>
+    <div class="form-outline d-flex w-50 mx-auto">
+        <input type="text" id="encryptedTask" class="form-control text-center" disabled>
+    </div>
+    <div class="btn-group d-flex justify-content-center align-items-center w-25 m-auto">
+        <button type="button" class="btn btn-primary" id="copyTextButton" onclick="copyText()">Скопировать</button>
+    </div>
+
+    <div id="math"></div>
+
+
+    <script src="professor.js"></script>
+</body>
+</html>
