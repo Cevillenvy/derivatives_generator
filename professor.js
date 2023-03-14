@@ -114,10 +114,18 @@ function generateAndDisplayF1(){
   const TaskOutput = document.getElementById("taskOutput");
   const TaskDifficultyInput = document.getElementById("taskDifficulty");
   const TaskDifficulty = TaskDifficultyInput.value;
-  const Task = generateF1(TaskDifficulty)
-  katex.render(Task, TaskOutputP)
-  TaskOutput.value = Task
-  f = 1
+  if(TaskDifficulty > 20){
+    alert("Сложность не может быть больше 20")
+  }
+  else if (TaskDifficulty > 0){
+    const Task = generateF1(TaskDifficulty)
+    katex.render(Task, TaskOutputP)
+    TaskOutput.value = Task
+    f = 1
+  }
+  else{
+    alert("Сложность должна быть положительной!")
+  }
 }
 
 function generateAndDisplayF2(){
@@ -125,10 +133,19 @@ function generateAndDisplayF2(){
   const TaskOutput = document.getElementById("taskOutput");
   const TaskDifficultyInput = document.getElementById("taskDifficulty");
   const TaskDifficulty = TaskDifficultyInput.value;
-  const Task = generateF2(TaskDifficulty)
-  katex.render(Task, TaskOutputP)
-  TaskOutput.value = Task
-  f = 2
+  if(TaskDifficulty > 20){
+    alert("Сложность не может быть больше 20")
+  }
+  else if (TaskDifficulty > 0){
+    const Task = generateF2(TaskDifficulty)
+    katex.render(Task, TaskOutputP)
+    TaskOutput.value = Task
+    f = 1
+  }
+  else{
+    alert("Сложность должна быть положительной!")
+  }
+
 }
 
 function refreshF(){
